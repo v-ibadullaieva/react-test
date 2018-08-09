@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
+import { Container } from 'reactstrap';
+import Table from './components/Table/Table';
+import Form from './components/Form/Form';
+import Summary from './components/Summary/Summary';
 
 class App extends Component {
-  state = {};
-
   render() {
     return (
-      <div>
-        <h1>Code here</h1>
-      </div>
+      <Container>
+        <Form />
+        <Table />
+        <Summary />
+      </Container>
     );
   }
 }

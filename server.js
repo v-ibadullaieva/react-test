@@ -1,9 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const actions = require('./actions');
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/users', (req, res) => {
@@ -17,8 +19,8 @@ app.post('/users', (req, res) => {
     return;
   }
   try {
-    actions.create(data.first_name, data.last_name, data.dob, data.location);
-    res.status(200).end();
+    const person = actions.create(data.first_name, data.last_name, data.dob, data.location);
+    res.json(person);
   } catch (err) {
     res.status(400).json({err});
   }

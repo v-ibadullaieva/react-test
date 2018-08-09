@@ -15,16 +15,20 @@ class Person {
 
 module.exports = {
   create: (firstName, lastName, dob, location) => {
-    const person = new Person(firstName, lastName, dob, location);
-    const json = fs.readFileSync(DB_PATH);
-    const data = JSON.parse(json);
-    data.push({
+    let person = new Person(firstName, lastName, dob, location);
+    person = {
       id: uuid(),
       ...person,
-    });
-    return fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2), {
+    };
+    
+    const json = fs.readFileSync(DB_PATH);
+    const data = JSON.parse(json);
+    data.push(person);
+    fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2), {
       encoding: 'utf8',
     });
+    
+    return person
   },
 
   read: () => {

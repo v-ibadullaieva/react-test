@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Summary Component renders without crashing 1`] = `
+<dl>
+  <dt>
+    Count of users from Kiev or kiev
+  </dt>
+  <dd>
+    1
+  </dd>
+  <dt>
+    Sum of ages of three oldest users from table
+  </dt>
+  <dd>
+    10
+  </dd>
+  <dt>
+    Longest string of first name + last name pair
+  </dt>
+  <dd>
+    Prince Holton
+  </dd>
+</dl>
+`;
