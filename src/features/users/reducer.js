@@ -39,7 +39,7 @@ export default handleActions({
   },
   [REMOVE_USER]: {
     next: (state, action) => {
-      const index = state.users.findIndex(e => e.id === e[action.payload]);
+      const index = state.users.findIndex(e => e.id === action.payload);
       state.users.splice(index, 1);
 
       return {

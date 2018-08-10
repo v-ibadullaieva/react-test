@@ -14,11 +14,6 @@ const props = {
 
 describe('Summary Component', () => {
   let wrapper;
-  const mockSummaryfn = jest.fn();
- 
-  //  beforeEach(() => {
-  //    wrapper = shallow(<Summary summary={mockSummaryfn}/>)
-  //  })
 
    it("renders without crashing", () => {
     const tree = renderer.create(<Summary {...props} />).toJSON();
